@@ -163,9 +163,9 @@ function generateUrlToShare(){
 		}
 	}
 
-	alert("Tu enlace es: "+url);
+	alert(url);
 
-	var shareBtn = document.getElementById("copy-button");
+	var shareBtn = document.getElementById("shareBtn");
 	shareBtn.setAttribute("data-clipboard-text",url);
 	var shareFbBtn = document.getElementById("shareFbBtn");
 	shareFbBtn.setAttribute("data-href",url);
