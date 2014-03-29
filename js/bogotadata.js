@@ -153,7 +153,7 @@ function generateUrlToShare(){
 		description = "Sin título";
 	}
 	description = encodeURIComponent(description);
-	var url = "http://bogotadata.kaputlab.co/ver.html?title="+title+"&description="+description+"&id=[";
+	var url = "http://bogotadata.kaputlab.co/ver.html?title="+title+"&description="+description+"&ids=[";
 	for(var i=0; i<checkedDatasetsIds.length; i++){
 		url += checkedDatasetsIds[i];
 		if(i!=checkedDatasetsIds.length-1){
@@ -163,9 +163,9 @@ function generateUrlToShare(){
 		}
 	}
 
-	alert(url);
+	alert("Tu enlace es: "+url);
 
-	var shareBtn = document.getElementById("shareBtn");
+	var shareBtn = document.getElementById("copy-button");
 	shareBtn.setAttribute("data-clipboard-text",url);
 	var shareFbBtn = document.getElementById("shareFbBtn");
 	shareFbBtn.setAttribute("data-href",url);
