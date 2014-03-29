@@ -1,30 +1,67 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-	<title>Ver</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>BogotaData</title>
+	<link rel="stylesheet" href="css/app.css" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<script src="bower_components/modernizr/modernizr.js"></script>
 </head>
 <body>
+<!--
+Framework codes: b3 (Bootstrap 3), bo (Bootstrap 2 fixed), bf (Bootstrap 2 fluid), f4 (Foundation 4 & 5), f3 (Foundation 3), f2 (Foundation 2).
+Note 1: 'Gutter width' parameter only applies to gutterless grid systems (Bootstrap 3, Foundation 4 & 5).
+Note 2: 'Nb cols' parameter for Bootstrap only.
+-->
 <script src="chart/Chart.js"></script>
 <script src="js/functionsView.js"></script>
-<h3>Params:</h3>
-<div id="params"></div>
-<hr>
-<h3>Title:</h3>
-<div id="title"></div>
-<hr>
-<h3>Description:</h3>
-<div id="description"></div>
-<hr>
-<h3>Ids:</h3>
-<div id="ids"></div>
-<hr>
-<h3>Chart:</h3>
-<table>
-<tr>
-	<td><div id="chart"></div></td>
-	<td><div id="chartLegend"></div></td>
-</tr>
-</table>
+<header>
+	<div class="row">
+		<div class="large-4 columns">
+			<a href="index.html"><img class="logo" src="img/logo.svg" alt="BogotaData"></a>
+		</div>
+		<div class="large-2 large-push-2 columns">
+			<input type="text" name="user" placeholder="Usuario">
+		</div>
+		<div class="large-2 large-push-2 columns">
+			<input type="text" name="pass" placeholder="Password">
+		</div>
+		<div class="large-2 columns">
+			<input type="submit" class="button [tiny small large]" value="Entrar">
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-8 large-centered columns">
+			<h2 id="title">Mi amigos este es el titulo del Versus</h2>
+		</div>
+		<div class="large-4 large-centered columns">
+			<h3 id="description">Subtitulo de la WebApp</h3>
+		</div>
+	</div>
+</header>
+<section class="row">
+	<div class="large-9 columns">
+		<div class="row">
+			<div class="large-12 columns graph">
+				<div id="chart"></div>
+			</div>
+		</div>
+	</div>
+		<div class="large-3 columns">
+			<div id="chartLegend"></div>
+		</div>
+</section>
 
+<article class="row">
+	<div class="large-12 columns">
+		<div class="fb-comments" data-href="http://labs.aktio.co/open-data-hackathon/" data-numposts="5" data-order-by="reverse_time" data-colorscheme="light"></div>
+	</div>
+</article>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="bower_components/zeroclipboard/ZeroClipboard.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

@@ -1,143 +1,130 @@
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-	<script>
-		function onloadFunc(){
-			document.getElementById("contentUrl").innerHTML = "";
-			
-			var shareFB = "";
-			var shareFB2 = "";
-			shareFB += "<div class='fb-share-button' data-href='http://bogotadata.kaputlab.co/index.html";
-			shareFB2 += "<div class='fb-comments' data-href='http://bogotadata.kaputlab.co/index.html";
-
-			var params = getSearchParameters();
-			var count = 0;
-			for(var key in params){
-				if(count>0){
-					shareFB += "&";
-					shareFB2 += "&";
-				}else{
-					shareFB += "?";
-					shareFB2 += "?";
-				}
-				var attrName = key;
-				var attrValue = params[key];
-				document.getElementById("contentUrl").innerHTML += "key: ("+attrName+") value:("+attrValue+")<br>";
-				shareFB += attrName+"="+attrValue;
-				shareFB2 += attrName+"="+attrValue;
-				count++;
-			}
-
-			shareFB += "' data-type='box_count'></div>";
-			shareFB2 += "' data-width='700px' data-numposts='5' data-order-by='reverse_time' data-colorscheme='light'></div>";
-
-			document.getElementById("shareFB").innerHTML = shareFB;
-			document.getElementById("shareFB2").innerHTML = shareFB2;
-
-		}
-		function getSearchParameters() {
-			var prmstr = window.location.search.substr(1);
-			return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
-		}
-
-		function transformToAssocArray( prmstr ) {
-			var params = {};
-			var prmarr = prmstr.split("&");
-			for ( var i = 0; i < prmarr.length; i++) {
-				var tmparr = prmarr[i].split("=");
-				params[tmparr[0]] = tmparr[1];
-			}
-			return params;
-		}
-
-
-		window.onload = onloadFunc;
-	</script>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>BogotaData</title>
+	<link rel="stylesheet" href="css/app.css" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<script src="bower_components/modernizr/modernizr.js"></script>
 </head>
 <body>
-	
-	<div>
-		<h1>mi tituloooo</h1>
-		<p>asdfghjkl;lkjhgfdsawertyuiop;lkjmnbvcdxrtyujnbvcdswsxsaqwsdfghjuytgbkloiuhygtfdfghjkljhgfdrtyukjbgvcdfgthyjkoiujkiuyghbvgfvcfcdc</p>
-		<div id="contentUrl"></div>
-	</div>
-	<div id="fb-root"></div>
-	<script>
-		window.fbAsyncInit = function() {
+	<header>
+		<div class="row">
+			<div class="large-4 columns">
+				<a href="index.html"><img class="logo" src="img/logo.svg" alt="BogotaData"></a>
+			</div>
+			<div class="large-2 large-push-2 columns">
+				<input type="text" name="user" placeholder="Usuario">
+			</div>
+			<div class="large-2 large-push-2 columns">
+				<input type="text" name="pass" placeholder="Password">
+			</div>
+			<div class="large-2 columns">
+				<input type="submit" class="button [tiny small large]" value="Entrar">
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-11 large-centered columns">
+				<h2>Ciudadanos que participan y activan a Bogotá D.C.</h2>
+			</div>
+			<div class="large-7 large-centered columns"style="margin-bottom: 2em;">
+				<h3>Ahora es posible ver lo que pasa Bogotá!</h3>
+			</div>
+		</div>
+	</header>
+	<article class="row">
+		<div class="large-4 columns">
+			<ul class="ret anim">
+				<li>
+					<figure>
+						<div><img src="img/tiempo.jpg" width="300px" alt="img05"></div>
+						<figcaption>
+							<h4>Tiempo y clima</h4>
+							<span class="author">Rubén Avila</span>
+							<a href="ver.html">Vamos allá!</a>
+						</figcaption>
+					</figure>
+				</li>
+			</div>
+			<div class="large-4 columns">
+			<ul class="ret anim">
+				<li>
+					<figure>
+						<div><img src="img/museo.jpg" width="300px" alt="img05"></div>
+						<figcaption>
+							<h4>Deserción Educativa</h4>
+							<span class="author">Julian FigueroApi</span>
+							<a href="ver.html">Vamos allá!</a>
+						</figcaption>
+					</figure>
+				</li>
+			</div>
+			<div class="large-4 columns">
+			<ul class="ret anim">
+				<li>
+					<figure>
+						<div><img src="img/comida.jpg" width="300px" alt="img05"></div>
+						<figcaption>
+							<h4>Comida y Salud</h4>
+							<span class="author">Dani Molotov</span>
+							<a href="ver.html">Vamos allá!</a>
+						</figcaption>
+					</figure>
+				</li>
+			</div>
+		</article>
 
-			FB.init({
-				appId      : '541715325944679',
-	status     : true, // check login status
-	cookie     : true, // enable cookies to allow the server to access the session
-	xfbml      : true  // parse XFBML
-});
+		<article class="row" style="margin-bottom: 2em;">
+		<div class="large-4 columns">
+			<ul class="ret anim">
+				<li>
+					<figure>
+						<div><img src="img/educacion.jpg" width="300px" alt="img05"></div>
+						<figcaption>
+							<h4>Educacion y Politica</h4>
+							<span class="author">Ruben Avila</span>
+							<a href="ver.html">Vamos allá!</a>
+						</figcaption>
+					</figure>
+				</li>
+			</div>
+			<div class="large-4 columns">
+			<ul class="ret anim">
+				<li>
+					<figure>
+						<div><img src="img/fiesta.jpg" width="300px" alt="img05"></div>
+						<figcaption>
+							<h4>Festividades y Fiestas</h4>
+							<span class="author">Andrea Rojas</span>
+							<a href="ver.html">Vamos allá!</a>
+						</figcaption>
+					</figure>
+				</li>
+			</div>
+			<div class="large-4 columns">
+			<ul class="ret anim">
+				<li>
+					<figure>
+						<div><img src="img/transporte.jpg" width="300px" alt="img05"></div>
+						<figcaption>
+							<h4>Vehiculos y Residencias</h4>
+							<span class="author">Daniel</span>
+							<a href="ver.html">Vamos allá!</a>
+						</figcaption>
+					</figure>
+				</li>
+			</div>
+		</article>
 
-  // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
-  // for any authentication related change, such as login, logout or session refresh. This means that
-  // whenever someone who was previously logged out tries to log in again, the correct case below 
-  // will be handled. 
-  FB.Event.subscribe('auth.authResponseChange', function(response) {
-	// Here we specify what we do with the response anytime this event occurs. 
-	if (response.status === 'connected') {
-			//FB.api('/me', function(data) {
-			//alert('Nombre: ' + data.name);
-			//});
-	  // The response object is returned with a status field that lets the app know the current
-	  // login status of the person. In this case, we're handling the situation where they 
-	  // have logged in to the app.
-	  testAPI();
-	} else if (response.status === 'not_authorized') {
-	  // In this case, the person is logged into Facebook, but not into the app, so we call
-	  // FB.login() to prompt them to do so. 
-	  // In real-life usage, you wouldn't want to immediately prompt someone to login 
-	  // like this, for two reasons:
-	  // (1) JavaScript created popup windows are blocked by most browsers unless they 
-	  // result from direct interaction from people using the app (such as a mouse click)
-	  // (2) it is a bad experience to be continually prompted to login upon page load.
-	  FB.login(function(){}, {scope: 'publish_actions'});
-	} else {
-	  // In this case, the person is not logged into Facebook, so we call the login() 
-	  // function to prompt them to do so. Note that at this stage there is no indication
-	  // of whether they are logged into the app. If they aren't then they'll see the Login
-	  // dialog right after they log in to Facebook. 
-	  // The same caveats as above apply to the FB.login() call here.
-	  FB.login(function(){FB.api('/me/feed', 'post', {message: 'Hello, world!'});}, {scope: 'publish_actions'});
-	}
-});
-};
+		<footer>
+			<div class="large-2 columns large-centered">
+				<a href="crear.html" class="button">Crear</a>
+			</div>
+		</footer>
 
-  // Load the SDK asynchronously
-
-  (function(d, s, id) {
-  	var js, fjs = d.getElementsByTagName(s)[0];
-  	if (d.getElementById(id)) return;
-  	js = d.createElement(s); js.id = id;
-  	js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=541715325944679";
-  	fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-
-
-  // Here we run a very simple test of the Graph API after login is successful. 
-  // This testAPI() function is only called in those cases. 
-  function testAPI() {
-  	console.log('Welcome!  Fetching your information.... ');
-  	FB.api('/me', function(response) {
-  		console.log('Good to see you, ' + response.name + '.');
-  	});
-  }
-</script>
-
-<!--
-  Below we include the Login Button social plugin. This button uses the JavaScript SDK to
-  present a graphical Login button that triggers the FB.login() function when clicked. -->
-
-  <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
-
-
-  <div id="shareFB">
-  </div>
-  <div id="shareFB2">
-  </div>
-
-</body>
-</html>
+			<script src="bower_components/jquery/dist/jquery.min.js"></script>
+			<script src="bower_components/foundation/js/foundation.min.js"></script>
+			<script src="js/app.js"></script>
+		</body>
+		</html>

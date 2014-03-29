@@ -9,7 +9,7 @@ function onLoadFunc(){
 	for(var key in params){
 		var keyStr = key;
 		var valueStr = params[key];
-		document.getElementById("params").innerHTML += "key: ("+keyStr+") value:("+valueStr+")<br>";
+		//document.getElementById("params").innerHTML += "key: ("+keyStr+") value:("+valueStr+")<br>";
 		switch(keyStr){
 			case 'title':
 			document.getElementById("title").innerHTML = decodeURIComponent(valueStr);
@@ -19,12 +19,7 @@ function onLoadFunc(){
 			break;
 			case 'ids':
 			ids = JSON.parse(valueStr);
-			var items = "";
-			for(var i=0; i<ids.length; i++){
-				items += "<li>"+ids[i]+"</li>";
-			}
-			document.getElementById("ids").innerHTML = "<ul>"+items+"</ul>";
-			pintarChart();
+			drawChart();
 			break;
 		}
 	}
@@ -45,11 +40,10 @@ function transformToAssocArray( prmstr ) {
 	return params;
 }
 
-function pintarChart(){
+function drawChart(){
 	if(ids.length>0){
-		halarDatos();
-		var htmlCanvas = "";
-		htmlCanvas += "<canvas id='chart1' width='500' height='400'></canvas>";
+		pullDataset();
+		var htmlCanvas = "<canvas id='chart1' width='500' height='400'></canvas>";
 		document.getElementById("chart").innerHTML = htmlCanvas;
 		document.getElementById("chartLegend").innerHTML = "<b>Leyenda</b><br>";
 		var ctx = document.getElementById("chart1").getContext("2d");
@@ -84,7 +78,7 @@ function getDatasFromJson(json){
 	return datasThisJson;
 }
 
-function halarDatos(){
+function pullDataset(){
 	datas = [];
 	datasLabels = [];
 	var xmlhttp;
