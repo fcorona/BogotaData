@@ -16,25 +16,46 @@
 	<script>
 
 		var barChartData = {
-			labels : ["January","February","March","April","May","June","July"],
+			labels : ["2003","2007"],
 			datasets : [
 				{
+					label : "1",
 					fillColor : "rgba(220,220,220,0.5)",
 					strokeColor : "rgba(220,220,220,1)",
-					data : [65,59,90,81,56,55,40]
+					data : [323,354]
 				},
 				{
-					fillColor : "rgba(151,187,205,0.5)",
-					strokeColor : "rgba(151,187,205,1)",
-					data : [28,48,40,19,96,27,100]
+					label : "2",
+					fillColor : "rgba(251,187,25,0.5)",
+					strokeColor : "rgba(251,187,25,1)",
+					data : [301,754]
 				},
 				{
-					fillColor : "rgba(51,117,255,0.5)",
-					strokeColor : "rgba(51,117,255,1)",
-					data : [22,78,54,25,73,93,10]
+					label : "3",
+					fillColor : "rgba(151,87,105,0.5)",
+					strokeColor : "rgba(151,87,105,1)",
+					data : [326,0]
+				},
+				{
+					label : "4",
+					fillColor : "rgba(151,8,255,0.5)",
+					strokeColor : "rgba(151,8,255,1)",
+					data : [160,0]
+				},
+				{
+					label : "5",
+					fillColor : "rgba(11,247,25,0.5)",
+					strokeColor : "rgba(11,247,25,1)",
+					data : [401,0]
+				},
+				{
+					label : "92",
+					fillColor : "rgba(100,100,200,0.5)",
+					strokeColor : "rgba(100,100,200,1)",
+					data : [0,409]
 				}
 			]
-			
+
 		}
 
 	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartData);
